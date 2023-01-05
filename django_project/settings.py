@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # 3rd party
     "rest_framework",
     "corsheaders",  # new
+    "rest_framework.authtoken",  # new
+    "dj_rest_auth",  # new
     # Local
     "accounts.apps.AccountsConfig",  # new
     "posts.apps.PostsConfig",  # new
@@ -48,7 +50,12 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated"  # new
-    ]
+    ],
+
+    "DEFAULT_AUTHENTICATION_CLASSES": [  # new
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication"
+    ],
 }
 
 MIDDLEWARE = [
