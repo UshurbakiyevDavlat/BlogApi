@@ -13,12 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from dj_rest_auth.views import PasswordResetConfirmView, PasswordResetView
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('password-reset/', PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('admin/', admin.site.urls),
     path('api/v1/', include('posts.urls')),
     path('api-auth', include('rest_framework.urls')),
     path('api/v1/dj-rest-auth/', include("dj_rest_auth.urls")),  # new
+    path('api/v1/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),  # new
 ]
