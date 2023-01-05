@@ -14,3 +14,13 @@ Setting proper permissions is a very important part of any API. As a general str
 idea to set a strict project-level permissions policy such that only authenticated users can view
 the API. Then make view-level or custom permissions more accessible as needed on specific API
 endpoints.
+
+
+User authentication is one of the hardest areas to grasp when first working with web APIs.
+Without the benefit of a monolithic structure, we as developers have to deeply understand and
+configure our HTTP request/response cycles appropriately.
+Django REST Framework comes with a lot of built-in support for this process, including
+built-in TokenAuthentication. However developers must configure additional areas like user
+registration and dedicated urls/views themselves. As a result, a popular, powerful, and secure
+approach is to rely on the third-party packages dj-rest-auth and django-allauth to minimize
+the amount of code we have to write from scratch.
