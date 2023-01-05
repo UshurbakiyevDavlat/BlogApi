@@ -22,7 +22,7 @@ urlpatterns = [
     path('password-reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('admin/', admin.site.urls),
     path('api/v1/', include('posts.urls')),
-    path('api-auth', include('rest_framework.urls')),
+    path('api-auth', include('rest_framework.urls', namespace='posts')),
     path('api/v1/dj-rest-auth/', include("dj_rest_auth.urls")),  # new
     path('api/v1/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),  # new
 ]
