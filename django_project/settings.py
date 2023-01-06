@@ -57,7 +57,7 @@ REST_FRAMEWORK = {
     ],
 
     "DEFAULT_AUTHENTICATION_CLASSES": [  # new
-        # "rest_framework.authentication.SessionAuthentication",  # through the postman will accuse csrf
+        "rest_framework.authentication.SessionAuthentication",  # through the postman will accuse csrf
         "rest_framework.authentication.TokenAuthentication"
     ],
 }
