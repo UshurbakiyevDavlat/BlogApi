@@ -24,3 +24,13 @@ built-in TokenAuthentication. However developers must configure additional areas
 registration and dedicated urls/views themselves. As a result, a popular, powerful, and secure
 approach is to rely on the third-party packages dj-rest-auth and django-allauth to minimize
 the amount of code we have to write from scratch.
+
+
+Viewsets and routers are a powerful abstraction that reduce the amount of code we as developers
+must write. However this conciseness comes at the cost of an initial learning curve. It will feel
+strange the first few times you use viewsets and routers instead of views and URL patterns.
+Chapter 9: Viewsets and Routers 167
+Ultimately the decision of when to add viewsets and routers to your project is subjective. A good
+rule of thumb is to start with views and URLs. As your API grows in complexity if you find yourself
+repeating the same endpoint patterns over and over again, then look to viewsets and routers.
+Until then, keep things simple.
