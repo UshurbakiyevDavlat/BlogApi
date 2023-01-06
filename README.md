@@ -34,3 +34,11 @@ Ultimately the decision of when to add viewsets and routers to your project is s
 rule of thumb is to start with views and URLs. As your API grows in complexity if you find yourself
 repeating the same endpoint patterns over and over again, then look to viewsets and routers.
 Until then, keep things simple.
+
+
+Adding a schema and documentation is a vital part of any API. It is typically the first thing a fellow
+developer looks at, either within a team or on an open-source projects. Thanks to the automated
+Chapter 10: Schemas and Documentation 176
+tools covered in this chapter, ensuring your API has accurate, up-to-date documentation only
+requires a small amount of configuration. The last step is to deploy the Blog API properly which
+we’ll cover in the next chapter.
