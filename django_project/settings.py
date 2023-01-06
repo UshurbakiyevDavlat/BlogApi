@@ -28,7 +28,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ["ushurbakiyev-davlat-blog-api.herokuapp.com", "localhost", "127.0.0.1"]  # new
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]  # new
 
 AUTH_USER_MODEL = "accounts.CustomUser"  # new
 
