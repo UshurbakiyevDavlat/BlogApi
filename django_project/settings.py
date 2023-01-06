@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",  # new
     "dj_rest_auth",  # new
     "dj_rest_auth.registration",  # new
+    "drf_spectacular",  # new (has some issues with drf 3.14.0, something with NullBoolean
     # Local
     "accounts.apps.AccountsConfig",  # new
     "posts.apps.PostsConfig",  # new
@@ -57,9 +58,19 @@ REST_FRAMEWORK = {
     ],
 
     "DEFAULT_AUTHENTICATION_CLASSES": [  # new
-        "rest_framework.authentication.SessionAuthentication",  # through the postman will accuse csrf
+        # through the postman will accuse csrf error without corseheaders
+        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication"
     ],
+
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",  # new
+}
+
+SPECTACULAR_SETTINGS = {  # new
+    "TITLE": "Blog API Project",
+    "DESCRIPTION": "A sample blog to learn about DRF",
+    "VERSION": "1.0.0",
+    # OTHER SETTINGS
 }
 
 MIDDLEWARE = [
