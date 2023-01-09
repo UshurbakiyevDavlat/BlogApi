@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",  # new
     "dj_rest_auth",  # new
     "dj_rest_auth.registration",  # new
+    'django_filters',  # new
     "drf_spectacular",  # new (has some issues with drf 3.14.0, something with NullBoolean
     # Local
     "accounts.apps.AccountsConfig",  # new
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated"  # new
