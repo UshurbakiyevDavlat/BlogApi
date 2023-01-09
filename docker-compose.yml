@@ -8,3 +8,18 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - blog
+
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - blog
+
+networks:
+    blog:
+        driver: bridge
